@@ -1,0 +1,14 @@
+
+project_id = "qmbywoaicmryejnhudix"
+
+[functions.fasstap-proxy]
+verify_jwt = true
+
+[functions.cbdc-proxy]
+verify_jwt = true
+
+[functions.wipay-proxy]
+verify_jwt = true
+
+[functions.lynk-proxy]
+verify_jwt = true

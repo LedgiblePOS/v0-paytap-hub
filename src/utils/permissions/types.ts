@@ -1,0 +1,95 @@
+
+/**
+ * Enum for all available permissions in the system
+ */
+export enum Permission {
+  // User permissions
+  VIEW_USERS = 'VIEW_USERS',
+  CREATE_USER = 'CREATE_USER',
+  EDIT_USER = 'EDIT_USER',
+  DELETE_USER = 'DELETE_USER',
+  
+  // Merchant permissions
+  VIEW_MERCHANTS = 'VIEW_MERCHANTS',
+  CREATE_MERCHANT = 'CREATE_MERCHANT',
+  EDIT_MERCHANT = 'EDIT_MERCHANT',
+  APPROVE_MERCHANT = 'APPROVE_MERCHANT',
+  
+  // Transaction permissions
+  VIEW_TRANSACTIONS = 'VIEW_TRANSACTIONS',
+  PROCESS_TRANSACTION = 'PROCESS_TRANSACTION',
+  REFUND_TRANSACTION = 'REFUND_TRANSACTION',
+  
+  // Admin permissions
+  VIEW_ANALYTICS = 'VIEW_ANALYTICS',
+  EDIT_SETTINGS = 'EDIT_SETTINGS',
+  ACCESS_SUPER_ADMIN = 'ACCESS_SUPER_ADMIN',
+  
+  // Customer permissions
+  VIEW_CUSTOMERS = 'VIEW_CUSTOMERS',
+  CREATE_CUSTOMER = 'CREATE_CUSTOMER',
+  EDIT_CUSTOMER = 'EDIT_CUSTOMER',
+  DELETE_CUSTOMER = 'DELETE_CUSTOMER',
+  
+  // Product permissions
+  VIEW_PRODUCTS = 'VIEW_PRODUCTS',
+  CREATE_PRODUCT = 'CREATE_PRODUCT',
+  EDIT_PRODUCT = 'EDIT_PRODUCT',
+  DELETE_PRODUCT = 'DELETE_PRODUCT',
+  
+  // POS permissions
+  ACCESS_POS = 'ACCESS_POS',
+  PROCESS_SALE = 'PROCESS_SALE',
+  APPLY_DISCOUNT = 'APPLY_DISCOUNT',
+  
+  // Report permissions
+  VIEW_REPORTS = 'VIEW_REPORTS',
+  EXPORT_REPORTS = 'EXPORT_REPORTS',
+  
+  // Additional permissions (for backward compatibility)
+  VIEW_DASHBOARD = 'VIEW_DASHBOARD',
+  MANAGE_USERS = 'MANAGE_USERS',
+  MANAGE_PRODUCTS = 'MANAGE_PRODUCTS',
+  PROCESS_PAYMENTS = 'PROCESS_PAYMENTS',
+  VIEW_INVENTORY = 'VIEW_INVENTORY',
+  VIEW_SETTINGS = 'VIEW_SETTINGS',
+  VIEW_SYSTEM_SETTINGS = 'VIEW_SYSTEM_SETTINGS',
+  MANAGE_MERCHANTS = 'MANAGE_MERCHANTS',
+  SYSTEM_ADMIN = 'SYSTEM_ADMIN',
+  VERIFY_MERCHANT = 'VERIFY_MERCHANT',
+}
+
+/**
+ * Maps user roles to their permissions
+ */
+export const ROLE_PERMISSIONS = {
+  SUPER_ADMIN: Object.values(Permission),
+  ADMIN: [
+    Permission.VIEW_USERS,
+    Permission.CREATE_USER,
+    Permission.EDIT_USER,
+    Permission.VIEW_MERCHANTS,
+    Permission.VIEW_ANALYTICS,
+    Permission.VIEW_REPORTS,
+    Permission.EXPORT_REPORTS,
+  ],
+  MERCHANT: [
+    Permission.VIEW_CUSTOMERS,
+    Permission.CREATE_CUSTOMER,
+    Permission.EDIT_CUSTOMER,
+    Permission.DELETE_CUSTOMER,
+    Permission.VIEW_PRODUCTS,
+    Permission.CREATE_PRODUCT,
+    Permission.EDIT_PRODUCT,
+    Permission.DELETE_PRODUCT,
+    Permission.ACCESS_POS,
+    Permission.PROCESS_SALE,
+    Permission.VIEW_TRANSACTIONS,
+  ],
+  USER: [
+    Permission.VIEW_CUSTOMERS,
+    Permission.VIEW_PRODUCTS,
+    Permission.ACCESS_POS,
+    Permission.PROCESS_SALE,
+  ],
+};

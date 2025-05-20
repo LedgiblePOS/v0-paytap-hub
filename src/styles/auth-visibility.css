@@ -1,0 +1,81 @@
+
+/* Force visibility for auth pages to prevent blank screens */
+[data-auth-page-loaded="true"],
+[data-auth-page="login"],
+[data-auth-marker="login-form"],
+.auth-page,
+.login-page,
+.auth-error-boundary,
+.auth-error-boundary-content {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  min-height: 100px; /* Ensure minimal height */
+}
+
+/* Force content visibility classes */
+.content-visible,
+.force-content-visible,
+[data-content-ready="true"] {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure login form is visible */
+form[data-page="login"],
+form[data-auth-form="login"] {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Safety measures for auth error states */
+[data-auth-error="true"] .auth-error-boundary {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+  position: relative !important;
+}
+
+/* Ensure root elements are visible */
+html.content-ready,
+html.auth-content-loaded,
+body[data-auth-page-loaded="true"] {
+  display: block !important;
+}
+
+/* Ensure the auth page has minimal dimensions */
+.auth-page {
+  min-height: 200px !important;
+  min-width: 200px !important;
+}
+
+/* Target potential wrapper elements */
+#root,
+main,
+[data-auth-wrapper="active"] {
+  display: block !important;
+  min-height: 100px !important;
+}
+
+/* Add direct styling for the login component */
+[data-testid="auth-login"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  padding: 1rem !important;
+}
+
+/* Apply high specificity selector for form components */
+.login-page form,
+.auth-page form,
+div[data-auth-page="login"] form {
+  display: block !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  margin: 0 auto !important;
+}

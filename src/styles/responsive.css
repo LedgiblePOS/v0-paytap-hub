@@ -1,0 +1,109 @@
+
+/* Mobile-first responsive styles */
+
+/* Base styles (mobile) */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.responsive-card {
+  padding: 1rem;
+}
+
+.responsive-text-xl {
+  font-size: 1.5rem;
+}
+
+.responsive-text-lg {
+  font-size: 1.25rem;
+}
+
+.responsive-hidden-mobile {
+  display: none;
+}
+
+/* Tablet styles */
+@media (min-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .responsive-card {
+    padding: 1.5rem;
+  }
+  
+  .responsive-hidden-mobile {
+    display: initial;
+  }
+  
+  .responsive-hidden-tablet {
+    display: none;
+  }
+  
+  .responsive-text-xl {
+    font-size: 1.75rem;
+  }
+  
+  .responsive-text-lg {
+    font-size: 1.5rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .responsive-card {
+    padding: 2rem;
+  }
+  
+  .responsive-hidden-tablet {
+    display: initial;
+  }
+  
+  .responsive-hidden-desktop {
+    display: none;
+  }
+  
+  .responsive-text-xl {
+    font-size: 2rem;
+  }
+  
+  .responsive-text-lg {
+    font-size: 1.75rem;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1280px) {
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  /* Optimize tables for printing */
+  table {
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+}

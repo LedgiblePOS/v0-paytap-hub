@@ -1,0 +1,21 @@
+
+export enum Permission {
+  MANAGE_USERS = 'MANAGE_USERS',
+  VIEW_INVENTORY = 'VIEW_INVENTORY',
+  MANAGE_INVENTORY = 'MANAGE_INVENTORY',
+  VIEW_REPORTS = 'VIEW_REPORTS',
+  MANAGE_SETTINGS = 'MANAGE_SETTINGS',
+  VIEW_TRANSACTIONS = 'VIEW_TRANSACTIONS',
+  MANAGE_TRANSACTIONS = 'MANAGE_TRANSACTIONS',
+  VIEW_CUSTOMERS = 'VIEW_CUSTOMERS',
+  MANAGE_CUSTOMERS = 'MANAGE_CUSTOMERS',
+  VIEW_ANALYTICS = 'VIEW_ANALYTICS'
+}
+
+export interface PermissionSet {
+  [key: string]: boolean;
+}
+
+export interface RolePermissions {
+  [role: string]: Permission[];
+}

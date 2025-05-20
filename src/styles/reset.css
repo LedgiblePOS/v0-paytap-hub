@@ -1,0 +1,38 @@
+
+/* Reset styles to prevent blank pages due to CSS issues */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure content is always visible */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Force visibility for auth content */
+[data-auth-content="ready"],
+[data-auth-content="loaded"],
+[data-auth-page-loaded="true"],
+[data-content-ready="true"],
+.auth-content-wrapper {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 100vh;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Prevent hidden overflow that might cause content to be invisible */
+#root {
+  overflow: visible !important;
+}
